@@ -28,7 +28,6 @@ namespace Telecom
         private void StartLoadData()
         {
             database.Subscriptions.Load();
-            //subscriptionsBindingSource.DataSource = database.Subscriptions.ToList();
             subscriptionsBindingSource.DataSource = database.Subscriptions.Local.ToBindingList();
         }
 

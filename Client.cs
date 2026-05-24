@@ -86,7 +86,12 @@ namespace Telecom
             }
 
         }
-
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Main form = new Main();
+            this.Visible = false;
+            form.Show();
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -97,11 +102,6 @@ namespace Telecom
 
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            Main form = new Main();
-            this.Visible = false;
-            form.Show();
-        }
+
     }
 }

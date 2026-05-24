@@ -46,13 +46,14 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TariffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isActiveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tariffsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tariffsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TariffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isActiveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -199,16 +201,28 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkCyan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.isActiveDataGridViewTextBoxColumn,
             this.ClientID,
-            this.TariffID});
+            this.TariffID,
+            this.isActiveDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.subscriptionsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(47, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(541, 322);
             this.dataGridView1.TabIndex = 20;
+            // 
+            // subscriptionsBindingSource
+            // 
+            this.subscriptionsBindingSource.DataSource = typeof(Telecom.ModelEF.Subscriptions);
+            // 
+            // tariffsBindingSource
+            // 
+            this.tariffsBindingSource.DataSource = typeof(Telecom.ModelEF.Tariffs);
+            // 
+            // tariffsBindingSource1
+            // 
+            this.tariffsBindingSource1.DataSource = typeof(Telecom.ModelEF.Tariffs);
             // 
             // ClientID
             // 
@@ -222,6 +236,12 @@
             this.TariffID.HeaderText = "TariffID";
             this.TariffID.Name = "TariffID";
             // 
+            // isActiveDataGridViewTextBoxColumn
+            // 
+            this.isActiveDataGridViewTextBoxColumn.DataPropertyName = "IsActive";
+            this.isActiveDataGridViewTextBoxColumn.HeaderText = "IsActive";
+            this.isActiveDataGridViewTextBoxColumn.Name = "isActiveDataGridViewTextBoxColumn";
+            // 
             // startDateDataGridViewTextBoxColumn
             // 
             this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
@@ -233,20 +253,6 @@
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
             this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // isActiveDataGridViewTextBoxColumn
-            // 
-            this.isActiveDataGridViewTextBoxColumn.DataPropertyName = "IsActive";
-            this.isActiveDataGridViewTextBoxColumn.HeaderText = "IsActive";
-            this.isActiveDataGridViewTextBoxColumn.Name = "isActiveDataGridViewTextBoxColumn";
-            // 
-            // subscriptionsBindingSource
-            // 
-            this.subscriptionsBindingSource.DataSource = typeof(Telecom.ModelEF.Subscriptions);
-            // 
-            // tariffsBindingSource
-            // 
-            this.tariffsBindingSource.DataSource = typeof(Telecom.ModelEF.Tariffs);
             // 
             // Subscription
             // 
@@ -268,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,10 +301,11 @@
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tariffsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isActiveDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TariffID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isActiveDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tariffsBindingSource1;
     }
 }
