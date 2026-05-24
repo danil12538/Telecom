@@ -179,7 +179,7 @@
             // 
             this.buttonBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBack.ForeColor = System.Drawing.Color.DarkCyan;
-            this.buttonBack.Location = new System.Drawing.Point(57, 23);
+            this.buttonBack.Location = new System.Drawing.Point(596, 21);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(140, 34);
             this.buttonBack.TabIndex = 18;
