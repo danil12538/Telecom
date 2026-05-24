@@ -84,6 +84,12 @@
     <Compile Include="ModelEF\Tickets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription.Designer.cs">
+      <DependentUpon>Subscription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tariff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Subscription.resx">
+      <DependentUpon>Subscription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tariff.resx">
       <DependentUpon>Tariff.cs</DependentUpon>
     </EmbeddedResource>

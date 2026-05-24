@@ -32,6 +32,7 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +88,18 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBack.ForeColor = System.Drawing.Color.DarkCyan;
+            this.buttonBack.Location = new System.Drawing.Point(628, 12);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(125, 35);
+            this.buttonBack.TabIndex = 3;
+            this.buttonBack.Text = "Назад";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
@@ -133,11 +146,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlueViolet;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Client";
-            this.Text = "Client";
             this.Load += new System.EventHandler(this.Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
@@ -157,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

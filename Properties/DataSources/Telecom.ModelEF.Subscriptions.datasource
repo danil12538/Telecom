@@ -6,5 +6,60 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="Subscriptions" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <Children>
+      <GenericObjectDataSource DisplayName="Clients" Version="1.0">
+         <TypeInfo>Telecom.ModelEF.Clients, Telecom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="Subscriptions.Clients">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="Сведения" Type="Microsoft.VSDesigner.Data.DataForm.Windows.DetailView" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
+      </GenericObjectDataSource>
+      <GenericObjectDataSource DisplayName="Tariffs" Version="1.0">
+         <TypeInfo>Telecom.ModelEF.Tariffs, Telecom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+         <TypeUISetting>
+            <PropertyUISettings>
+               <PropertyUISetting Name="Subscriptions.Tariffs">
+                  <ControlSettings>
+                     <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                        <BindableControlInfo Name="Сведения" Type="Microsoft.VSDesigner.Data.DataForm.Windows.DetailView" />
+                     </ControlSetting>
+                  </ControlSettings>
+               </PropertyUISetting>
+            </PropertyUISettings>
+         </TypeUISetting>
+      </GenericObjectDataSource>
+   </Children>
    <TypeInfo>Telecom.ModelEF.Subscriptions, Telecom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeUISetting>
+      <PropertyUISettings>
+         <PropertyUISetting Name="ClientID">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="[Нет]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="SubID">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="[Нет]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="TariffID">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="[Нет]" Type="Microsoft.VSDesigner.Data.BindManager.NoneControlPlaceHolder" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+      </PropertyUISettings>
+   </TypeUISetting>
 </GenericObjectDataSource>

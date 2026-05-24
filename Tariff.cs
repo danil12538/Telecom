@@ -21,56 +21,73 @@ namespace Telecom
             InitializeComponent();
         }
 
-        public static ModelEF.Model1 model = new ModelEF.Model1();
-        List<Tariffs> tar = model.Tariffs.ToList();
-        int t = 0;
-        private void Start()
+        Model1 database = new Model1();
+        public class TariffItem
         {
-            model.Tariffs.Load();
-            comboBox1.DataSource = model.Tariffs.ToList();
-            listBox2.DataSource = model.Tariffs.ToList();
-            nameComboBox.DataSource = model.Tariffs.ToList();
+                public int Id { get; set; }
+                public string Name { get; set; }
+                public decimal Price { get; set; }
+                public bool IsActive { get; set; }
+
+            public override string ToString()
+            {
+                string status = IsActive ? "" : " (архив)";
+                return $"{Name} — {Price} руб.{status}";
+            }
+        }
+        private void Tariff_Load(object sender, EventArgs e)
+        {
+            var tariffs = database.Tariffs
+                .OrderBy(t => t.Name)
+                .ToList();
+
+            listBox1.Items.Clear();
+
+            foreach (var tariff in tariffs)
+            {
+
+                listBox1.Items.Add(new TariffItem
+                {
+                    Id = tariff.TariffID,
+                    Name = tariff.Name,
+                    Price = tariff.MonthlyFee,
+                    IsActive = (bool)tariff.IsActive
+                });
+            }
+
+
+            if (listBox1.Items.Count > 0)
+                listBox1.SelectedIndex = 0;
         }
 
-        private void Loading()
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Fill(tar[t]);
+            if (listBox1.SelectedItem is TariffItem selectedItem)
+            {
+                int selectedId = selectedItem.Id;
 
+                var tariff = database.Tariffs.Find(selectedId);
 
+                NametextBox.Text = tariff.Name;
+                FeetextBox.Text = tariff.MonthlyFee.ToString();
+                SpeedtextBox.Text = tariff.SpeedMbps.ToString();
+                ActivetextBox.Text = tariff.IsActive.ToString();
+                DestextBox.Text = tariff.Description;
+            }
         }
+
         private void NametextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        public void Fill(Tariffs tariff)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
-            NametextBox.Text = tariff.Name;
-            FeetextBox.Text = tariff.MonthlyFee.ToString();
-            SpeedtextBox.Text = tariff.SpeedMbps.ToString();
-            ActivetextBox.Text = tariff.IsActive.ToString();
-            DestextBox.Text = tariff.Description;
+            Main form = new Main();
+            this.Visible = false;
+            form.Show();
         }
-
-        private void Tariff_Load(object sender, EventArgs e)
-        {
-
-            Start();
-        }
-
-        private void descriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-       
-        }
-    
-
-
-
-        }
+    }
     }
 

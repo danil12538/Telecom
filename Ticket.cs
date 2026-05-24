@@ -22,8 +22,7 @@ namespace Telecom
         Model1 database = new Model1();
 
         List<Ticket> tickets = new List<Ticket>();
-        List<Ticket> TicketChange = new List<Ticket>();
-        List<string> TicketProp = new List<string>();
+
         private void Ticket_Load(object sender, EventArgs e)
         {
             ticketsBindingSource.DataSource = database.Tickets.ToList();
@@ -33,33 +32,30 @@ namespace Telecom
 
         private void loadStartData()
         {
-            // ticketsBindingSource.DataSource = TicketChange;
-            //tickets = database.Tickets.ToList();
+
             ticketsBindingSource.DataSource = tickets;
         }
 
         private void LoadDataCombo()
         {
-            // Очищаем ComboBox
+
             comboBox1.Items.Clear();
 
-            // Получаем все уникальные статусы из базы
+
             var statuses = database.Tickets
                 .Select(t => t.Status)
                 .Distinct()
                 .OrderBy(s => s)
                 .ToList();
 
-            // Добавляем пункт "Все"
+
             comboBox1.Items.Add("Все");
 
-            // Добавляем все статусы
             foreach (var status in statuses)
             {
                 comboBox1.Items.Add(status);
             }
 
-            // Выбираем "Все" по умолчанию
             comboBox1.SelectedIndex = 0;
         }
 
@@ -70,17 +66,15 @@ namespace Telecom
 
         private void FilterData()
         {
-            // Получаем выбранное значение из ComboBox
+           
             string selectedStatus = comboBox1.SelectedItem.ToString();
 
-            // Если выбрано "Все" — показываем всё
             if (selectedStatus == "Все" || string.IsNullOrEmpty(selectedStatus))
             {
                 ticketsBindingSource.DataSource = database.Tickets.ToList();
             }
             else
             {
-                // Фильтруем по статусу
                 var filtered = database.Tickets
                     .Where(t => t.Status == selectedStatus)
                     .ToList();
@@ -89,5 +83,11 @@ namespace Telecom
             }
         }
 
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Main form = new Main();
+            this.Visible = false;
+            form.Show();
+        }
     }
 }

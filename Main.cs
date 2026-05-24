@@ -43,5 +43,12 @@ namespace Telecom
             this.Visible = false;
             form.Show();
         }
+
+        private void Subbutton_Click(object sender, EventArgs e)
+        {
+            Subscription form = new Subscription();
+            this.Visible = false;
+            form.Show();
+        }
     }
 }

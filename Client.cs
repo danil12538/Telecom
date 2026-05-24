@@ -37,16 +37,29 @@ namespace Telecom
 
         private void buttonDel_Click(object sender, EventArgs e)
         {
-            if (DB.Clients.ToList().Count == 0)
+            if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("Данные отсутствуют!");
+                MessageBox.Show("Выберите запись для удаления!");
                 return;
             }
 
-            Clients CurrentClient = DB.Clients.Find((int)dataGridView1.CurrentRow.Cells[0].Value);
+            if (dataGridView1.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Нельзя удалить новую строку!");
+                return;
+            }
+
+            Clients CurrentClient = dataGridView1.CurrentRow.DataBoundItem as Clients;
+
+            if (CurrentClient == null)
+            {
+                MessageBox.Show("Не удалось получить данные записи!");
+                return;
+            }
+
             DialogResult result = MessageBox.Show(
-                $"Вы действительно хотите удалить объект с ID = {CurrentClient.ClientID}",
-                "Сообщение",
+                $"Вы действительно хотите удалить клиента: {CurrentClient.FullName}?",
+                "Подтверждение",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
@@ -56,14 +69,19 @@ namespace Telecom
                 {
                     DB.Clients.Remove(CurrentClient);
                     DB.SaveChanges();
+                    clientsBindingSource.DataSource = DB.Clients.ToList();
+                    clientsBindingSource.ResetBindings(false);
+                    MessageBox.Show("Запись удалена!");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    clientsBindingSource.DataSource = DB.Clients.ToList();
+                    // Показываем внутреннее исключение
+                    string errorMessage = "Ошибка при удалении: " + ex.Message;
+                    if (ex.InnerException != null)
+                    {
+                        errorMessage += "\n\nДетали: " + ex.InnerException.Message;
+                    }
+                    MessageBox.Show(errorMessage);
                 }
             }
 
@@ -77,6 +95,13 @@ namespace Telecom
         private void dataGridView1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Main form = new Main();
+            this.Visible = false;
+            form.Show();
         }
     }
 }

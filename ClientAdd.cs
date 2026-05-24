@@ -68,7 +68,6 @@ namespace Telecom
             NClient.Address = AddresstextBox.Text;
             NClient.Phone = PhonetextBox.Text;
             NClient.Balance = Convert.ToDecimal(BalancetextBox.Text);
-            // NClient.CreatedAt = Convert.ToDateTime(DatetextBox.Text);
             NClient.CreatedAt = Convert.ToDateTime(dateTimePicker.Text);
             NClient.Status = comboBoxStatus.Text;
 

@@ -69,6 +69,7 @@
             this.Subbutton.TabIndex = 2;
             this.Subbutton.Text = "Подписки";
             this.Subbutton.UseVisualStyleBackColor = true;
+            this.Subbutton.Click += new System.EventHandler(this.Subbutton_Click);
             // 
             // Tariffbutton
             // 
@@ -108,7 +109,6 @@
             this.Controls.Add(this.Clientbutton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Main";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

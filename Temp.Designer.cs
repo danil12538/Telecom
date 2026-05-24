@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(437, 233);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 0;
             // 
             // Temp
             // 
@@ -36,6 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Temp";
             this.Text = "Temp";
@@ -44,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

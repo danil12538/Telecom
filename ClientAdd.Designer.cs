@@ -34,7 +34,6 @@
             this.MailtextBox = new System.Windows.Forms.TextBox();
             this.AddresstextBox = new System.Windows.Forms.TextBox();
             this.BalancetextBox = new System.Windows.Forms.TextBox();
-            this.DatetextBox = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelMail = new System.Windows.Forms.Label();
@@ -93,14 +92,6 @@
             this.BalancetextBox.TabIndex = 6;
             this.BalancetextBox.TextChanged += new System.EventHandler(this.BalancetextBox_TextChanged);
             this.BalancetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BalancetextBox_KeyPress);
-            // 
-            // DatetextBox
-            // 
-            this.DatetextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DatetextBox.Location = new System.Drawing.Point(494, 245);
-            this.DatetextBox.Name = "DatetextBox";
-            this.DatetextBox.Size = new System.Drawing.Size(164, 26);
-            this.DatetextBox.TabIndex = 8;
             // 
             // labelName
             // 
@@ -198,6 +189,7 @@
             // 
             // comboBoxStatus
             // 
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatus.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Location = new System.Drawing.Point(494, 165);
@@ -210,7 +202,7 @@
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(494, 292);
+            this.dateTimePicker.Location = new System.Drawing.Point(494, 246);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(164, 26);
             this.dateTimePicker.TabIndex = 20;
@@ -240,14 +232,13 @@
             this.Controls.Add(this.labelMail);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.DatetextBox);
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.AddresstextBox);
             this.Controls.Add(this.MailtextBox);
             this.Controls.Add(this.PhonetextBox);
             this.Controls.Add(this.NametextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ClientAdd";
-            this.Text = "ClientAdd";
             this.Load += new System.EventHandler(this.ClientAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource)).EndInit();
@@ -263,7 +254,6 @@
         private System.Windows.Forms.TextBox MailtextBox;
         private System.Windows.Forms.TextBox AddresstextBox;
         private System.Windows.Forms.TextBox BalancetextBox;
-        private System.Windows.Forms.TextBox DatetextBox;
         private System.Windows.Forms.BindingSource subscriptionsBindingSource;
         private System.Windows.Forms.BindingSource tariffsBindingSource;
         private System.Windows.Forms.Label labelName;

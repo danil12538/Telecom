@@ -30,8 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,19 +67,53 @@
             this.dataGridView1.Size = new System.Drawing.Size(741, 322);
             this.dataGridView1.TabIndex = 0;
             // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataSource = typeof(Telecom.ModelEF.Tickets);
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 68);
+            this.comboBox1.Location = new System.Drawing.Point(324, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBack.ForeColor = System.Drawing.Color.DarkCyan;
+            this.buttonBack.Location = new System.Drawing.Point(619, 26);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(140, 34);
+            this.buttonBack.TabIndex = 23;
+            this.buttonBack.Text = "Назад";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.ForeColor = System.Drawing.Color.DarkCyan;
+            this.buttonAdd.Location = new System.Drawing.Point(63, 12);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(108, 35);
+            this.buttonAdd.TabIndex = 24;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDel.ForeColor = System.Drawing.Color.DarkCyan;
+            this.buttonDel.Location = new System.Drawing.Point(63, 70);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(108, 38);
+            this.buttonDel.TabIndex = 25;
+            this.buttonDel.Text = "Удалить";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataSource = typeof(Telecom.ModelEF.Tickets);
             // 
             // subscriptionsBindingSource
             // 
@@ -130,11 +167,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlueViolet;
             this.ClientSize = new System.Drawing.Size(800, 458);
+            this.Controls.Add(this.buttonDel);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Ticket";
-            this.Text = "Ticket";
             this.Load += new System.EventHandler(this.Ticket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
@@ -149,6 +189,9 @@
         private System.Windows.Forms.BindingSource ticketsBindingSource;
         private System.Windows.Forms.BindingSource subscriptionsBindingSource;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn Priority;
