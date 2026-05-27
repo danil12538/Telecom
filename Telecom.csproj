@@ -96,12 +96,6 @@
     <Compile Include="Tariff.Designer.cs">
       <DependentUpon>Tariff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Temp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Temp.Designer.cs">
-      <DependentUpon>Temp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,9 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tariff.resx">
       <DependentUpon>Tariff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Temp.resx">
-      <DependentUpon>Temp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>

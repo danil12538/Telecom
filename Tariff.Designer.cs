@@ -196,6 +196,7 @@
             this.Controls.Add(this.NametextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Tariff";
+            this.Text = "В";
             this.Load += new System.EventHandler(this.Tariff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource1)).EndInit();

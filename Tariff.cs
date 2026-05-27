@@ -77,16 +77,17 @@ namespace Telecom
             }
         }
 
-        private void NametextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonBack_Click(object sender, EventArgs e)
         {
             Main form = new Main();
             this.Visible = false;
             form.Show();
+        }
+
+
+        private void NametextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

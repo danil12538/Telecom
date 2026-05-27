@@ -39,11 +39,6 @@ namespace Telecom
             form.Show();
         }
 
-        private void BalancetextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BalancetextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             
@@ -134,6 +129,10 @@ namespace Telecom
         }
 
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void BalancetextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

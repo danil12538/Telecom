@@ -97,10 +97,7 @@ namespace Telecom
 
         }
 
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
     }

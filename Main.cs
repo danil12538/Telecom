@@ -17,12 +17,6 @@ namespace Telecom
         {
             InitializeComponent();
         }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Tariffbutton_Click(object sender, EventArgs e)
         {
             Tariff form = new Tariff();
@@ -50,5 +44,10 @@ namespace Telecom
             this.Visible = false;
             form.Show();
         }
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

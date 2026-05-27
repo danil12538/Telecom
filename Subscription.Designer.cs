@@ -309,7 +309,6 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tariffsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tariffsBindingSource1;
         private System.Windows.Forms.BindingSource clientsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
