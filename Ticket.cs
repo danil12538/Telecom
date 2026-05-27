@@ -19,13 +19,12 @@ namespace Telecom
             InitializeComponent();
         }
 
-        Model1 database = new Model1();
+        public static Model1 database = new Model1();
 
         List<Ticket> tickets = new List<Ticket>();
-
         private void Ticket_Load(object sender, EventArgs e)
         {
-            ticketsBindingSource.DataSource = database.Tickets.ToList();
+            clientsBindingSource.DataSource = database.Clients.ToList();
             loadStartData();
             LoadDataCombo();
         }
@@ -88,6 +87,64 @@ namespace Telecom
             Main form = new Main();
             this.Visible = false;
             form.Show();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            TicketAdd form = new TicketAdd();
+            this.Visible = false;
+            form.Show();
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Выберите запись для удаления!");
+                return;
+            }
+
+            if (dataGridView1.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Нельзя удалить новую строку!");
+                return;
+            }
+
+            Tickets CurrentTicket = dataGridView1.CurrentRow.DataBoundItem as Tickets;
+
+            if (CurrentTicket == null)
+            {
+                MessageBox.Show("Не удалось получить данные записи!");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                $"Вы действительно хотите удалить заявку: {CurrentTicket.Subject}?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    database.Tickets.Remove(CurrentTicket);
+                    database.SaveChanges();
+                    ticketsBindingSource.DataSource = database.Tickets.ToList();
+                    ticketsBindingSource.ResetBindings(false);
+                    MessageBox.Show("Запись удалена!");
+                }
+                catch (Exception ex)
+                {
+                    // Показываем внутреннее исключение
+                    string errorMessage = "Ошибка при удалении: " + ex.Message;
+                    if (ex.InnerException != null)
+                    {
+                        errorMessage += "\n\nДетали: " + ex.InnerException.Message;
+                    }
+                    MessageBox.Show(errorMessage);
+                }
+            }
         }
     }
 }

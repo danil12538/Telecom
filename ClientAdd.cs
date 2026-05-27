@@ -12,6 +12,7 @@ using Telecom.ModelEF;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity.Validation;
 using System.Net;
+using System.Data.Entity;
 
 namespace Telecom
 {
@@ -50,19 +51,51 @@ namespace Telecom
                     e.Handled = true;
             
         }
-        private int IDplus()
-        {
-            int max = 0;
-            foreach (Clients TB in vsClient)
-                if (max < TB.ClientID) max = TB.ClientID;
-            return ++max;
-        }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+
+            if (!PhonetextBox.MaskFull)
+            {
+                MessageBox.Show("заполните номер до конца",
+                                "Ошибка ввода",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                PhonetextBox.Focus(); 
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(NametextBox.Text))
+            {
+                MessageBox.Show("Введите имя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NametextBox.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(MailtextBox.Text))
+            {
+                MessageBox.Show("Введите Email", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MailtextBox.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(AddresstextBox.Text))
+            {
+                MessageBox.Show("Введите адрес", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                AddresstextBox.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(BalancetextBox.Text))
+            {
+                MessageBox.Show("Введите баланс", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                BalancetextBox.Focus();
+                return;
+            }
+            if (comboBoxStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите статус из списка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comboBoxStatus.Focus();
+                return;
+            }
+
             Clients NClient = new Clients();
 
-            NClient.ClientID = IDplus();
             NClient.FullName = NametextBox.Text;
             NClient.Email = MailtextBox.Text;
             NClient.Address = AddresstextBox.Text;

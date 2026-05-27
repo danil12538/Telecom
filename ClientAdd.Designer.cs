@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.NametextBox = new System.Windows.Forms.TextBox();
-            this.PhonetextBox = new System.Windows.Forms.TextBox();
             this.MailtextBox = new System.Windows.Forms.TextBox();
             this.AddresstextBox = new System.Windows.Forms.TextBox();
             this.BalancetextBox = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.subscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tariffsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PhonetextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tariffsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +58,6 @@
             this.NametextBox.Name = "NametextBox";
             this.NametextBox.Size = new System.Drawing.Size(164, 26);
             this.NametextBox.TabIndex = 2;
-            // 
-            // PhonetextBox
-            // 
-            this.PhonetextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhonetextBox.Location = new System.Drawing.Point(164, 165);
-            this.PhonetextBox.Name = "PhonetextBox";
-            this.PhonetextBox.Size = new System.Drawing.Size(164, 26);
-            this.PhonetextBox.TabIndex = 3;
             // 
             // MailtextBox
             // 
@@ -215,12 +207,22 @@
             // 
             this.tariffsBindingSource.DataSource = typeof(Telecom.ModelEF.Tariffs);
             // 
+            // PhonetextBox
+            // 
+            this.PhonetextBox.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhonetextBox.Location = new System.Drawing.Point(164, 167);
+            this.PhonetextBox.Mask = "+7 (000) 000-00-00";
+            this.PhonetextBox.Name = "PhonetextBox";
+            this.PhonetextBox.Size = new System.Drawing.Size(164, 26);
+            this.PhonetextBox.TabIndex = 21;
+            // 
             // ClientAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlueViolet;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PhonetextBox);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.buttonBack);
@@ -235,7 +237,6 @@
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.AddresstextBox);
             this.Controls.Add(this.MailtextBox);
-            this.Controls.Add(this.PhonetextBox);
             this.Controls.Add(this.NametextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ClientAdd";
@@ -250,7 +251,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox NametextBox;
-        private System.Windows.Forms.TextBox PhonetextBox;
         private System.Windows.Forms.TextBox MailtextBox;
         private System.Windows.Forms.TextBox AddresstextBox;
         private System.Windows.Forms.TextBox BalancetextBox;
@@ -267,5 +267,6 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.MaskedTextBox PhonetextBox;
     }
 }

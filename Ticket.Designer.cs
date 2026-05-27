@@ -30,21 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonDel = new System.Windows.Forms.Button();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResolvedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssignedTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,18 +56,71 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkCyan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClientID,
+            this.clientIDDataGridViewTextBoxColumn,
             this.Subject,
+            this.Description,
             this.Priority,
             this.Status,
             this.CreatedAt,
-            this.ResolvedAt,
-            this.AssignedTo});
+            this.ResolvedAt});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(27, 124);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(741, 322);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
+            // Priority
+            // 
+            this.Priority.DataPropertyName = "Priority";
+            this.Priority.HeaderText = "Priority";
+            this.Priority.Name = "Priority";
+            this.Priority.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // CreatedAt
+            // 
+            this.CreatedAt.DataPropertyName = "CreatedAt";
+            this.CreatedAt.HeaderText = "CreatedAt";
+            this.CreatedAt.Name = "CreatedAt";
+            this.CreatedAt.ReadOnly = true;
+            // 
+            // ResolvedAt
+            // 
+            this.ResolvedAt.DataPropertyName = "ResolvedAt";
+            this.ResolvedAt.HeaderText = "ResolvedAt";
+            this.ResolvedAt.Name = "ResolvedAt";
+            this.ResolvedAt.ReadOnly = true;
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataSource = typeof(Telecom.ModelEF.Tickets);
             // 
             // comboBox1
             // 
@@ -99,6 +154,7 @@
             this.buttonAdd.TabIndex = 24;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonDel
             // 
@@ -110,56 +166,15 @@
             this.buttonDel.TabIndex = 25;
             this.buttonDel.Text = "Удалить";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
-            // ticketsBindingSource
+            // clientsBindingSource
             // 
-            this.ticketsBindingSource.DataSource = typeof(Telecom.ModelEF.Tickets);
+            this.clientsBindingSource.DataSource = typeof(Telecom.ModelEF.Clients);
             // 
             // subscriptionsBindingSource
             // 
             this.subscriptionsBindingSource.DataSource = typeof(Telecom.ModelEF.Subscriptions);
-            // 
-            // ClientID
-            // 
-            this.ClientID.DataPropertyName = "ClientID";
-            this.ClientID.HeaderText = "ClientID";
-            this.ClientID.Name = "ClientID";
-            // 
-            // Subject
-            // 
-            this.Subject.DataPropertyName = "Subject";
-            this.Subject.HeaderText = "Subject";
-            this.Subject.Name = "Subject";
-            // 
-            // Priority
-            // 
-            this.Priority.DataPropertyName = "Priority";
-            this.Priority.HeaderText = "Priority";
-            this.Priority.Name = "Priority";
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // CreatedAt
-            // 
-            this.CreatedAt.DataPropertyName = "CreatedAt";
-            this.CreatedAt.HeaderText = "CreatedAt";
-            this.CreatedAt.Name = "CreatedAt";
-            // 
-            // ResolvedAt
-            // 
-            this.ResolvedAt.DataPropertyName = "ResolvedAt";
-            this.ResolvedAt.HeaderText = "ResolvedAt";
-            this.ResolvedAt.Name = "ResolvedAt";
-            // 
-            // AssignedTo
-            // 
-            this.AssignedTo.DataPropertyName = "AssignedTo";
-            this.AssignedTo.HeaderText = "AssignedTo";
-            this.AssignedTo.Name = "AssignedTo";
             // 
             // Ticket
             // 
@@ -178,6 +193,7 @@
             this.Load += new System.EventHandler(this.Ticket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriptionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -192,12 +208,13 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Priority;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResolvedAt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedTo;
     }
 }

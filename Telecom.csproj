@@ -108,6 +108,12 @@
     <Compile Include="Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="TicketAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketAdd.Designer.cs">
+      <DependentUpon>TicketAdd.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketAdd.resx">
+      <DependentUpon>TicketAdd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Telecom.ModelEF.Clients.datasource" />
